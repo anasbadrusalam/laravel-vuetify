@@ -12,7 +12,9 @@
                     </v-col>
                     <v-col class="text-right">
                         <Link :href="route('login')">
-                            <v-btn color="primary" variant="flat"> Masuk </v-btn>
+                            <v-btn color="primary" variant="flat">
+                                Login
+                            </v-btn>
                         </Link>
                     </v-col>
                 </v-row>
@@ -23,6 +25,23 @@
                 <slot />
             </v-container>
         </v-main>
+        <!-- <v-footer color="primary" border>
+            <v-row justify="center" no-gutters>
+                <v-btn
+                    v-for="link in links"
+                    :key="link"
+                    color="white"
+                    variant="text"
+                    class="mx-2"
+                    rounded="xl"
+                >
+                    {{ link }}
+                </v-btn>
+                <v-col class="text-center mt-4" cols="12">
+                    {{ new Date().getFullYear() }} — <strong>Laravel</strong>
+                </v-col>
+            </v-row>
+        </v-footer> -->
     </v-app>
 </template>
 
@@ -33,6 +52,9 @@ export default {
     components: {
         Link,
     },
+    data: () => ({
+        links: ["Home", "About Us", "Team", "Services", "Blog", "Contact Us"],
+    }),
 };
 </script>
 

@@ -1,15 +1,23 @@
 <template>
-    <Head title="Masuk"></Head>
+    <Head title="Login"></Head>
     <GuestLayout>
-        <v-sheet height="100" >
-            <v-row align="center" justify="center">
-                <v-col>
-                    <v-card flat>
-                        <v-card-text> hii </v-card-text>
-                    </v-card>
-                </v-col>
-            </v-row>
-        </v-sheet >
+        <v-row>
+            <v-col>
+                <v-card max-width="550" class="mx-auto">
+                    <v-card-title>Login</v-card-title>
+                    <v-card-text>
+                        <v-text-field
+                            label="Email"
+                        ></v-text-field>
+                        <v-text-field
+                            label="Password"
+                        ></v-text-field>
+                        <v-btn>Login</v-btn>
+
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
     </GuestLayout>
 </template>
 
