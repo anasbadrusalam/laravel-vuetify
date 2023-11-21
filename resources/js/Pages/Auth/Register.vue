@@ -16,6 +16,7 @@
                             <v-text-field
                                 v-model="form.name"
                                 label="Name"
+                                autofocus
                                 autocomplete="off"
                                 :error-messages="form.errors.name"
                                 required

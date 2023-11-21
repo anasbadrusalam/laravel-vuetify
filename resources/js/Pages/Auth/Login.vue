@@ -11,13 +11,15 @@
                 >
                     <v-card-title>Login</v-card-title>
                     <v-card-text>
-                        <v-text-field label="Email"></v-text-field>
-                        <v-text-field label="Password"></v-text-field>
-                        <v-btn
-                            :disabled="form.processing"
-                            :loading="form.processing"
-                            >Login</v-btn
-                        >
+                        <form @submit.prevent="submit()" autocomplete="off">
+                            <v-text-field label="Email"></v-text-field>
+                            <v-text-field label="Password"></v-text-field>
+                            <v-btn
+                                :disabled="form.processing"
+                                :loading="form.processing"
+                                >Login</v-btn
+                            >
+                        </form>
                     </v-card-text>
                 </v-card>
             </v-col>
