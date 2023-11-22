@@ -51,13 +51,16 @@
                                 :loading="form.processing"
                                 >Register</v-btn
                             >
-                            <div class="text-center mt-3">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi laudantium cum
-                                    doloremque amet similique quas.
-                                </p>
-                            </div>
+                            <div class="mt-6 text-center">
+                            <p>
+                                Sudah punya akun?
+                                <Link
+                                    class="font-weight-medium"
+                                    :href="route('login')"
+                                    >Masuk</Link
+                                >
+                            </p>
+                        </div>
                         </form>
                     </v-card-text>
                 </v-card>

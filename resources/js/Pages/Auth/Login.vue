@@ -12,14 +12,61 @@
                     <v-card-title>Login</v-card-title>
                     <v-card-text>
                         <form @submit.prevent="submit()" autocomplete="off">
-                            <v-text-field label="Email"></v-text-field>
-                            <v-text-field label="Password"></v-text-field>
+                            <v-text-field
+                                v-model="form.email"
+                                label="Email"
+                                autofocus
+                                autocomplete="off"
+                                :error-messages="form.errors.email"
+                                required
+                            ></v-text-field>
+                            <v-text-field
+                                v-model="form.password"
+                                label="Password"
+                                type="password"
+                                autocomplete="off"
+                                :error-messages="form.errors.password"
+                                required
+                            ></v-text-field>
+                            <div class="d-flex justify-space-between">
+                                <div>
+                                    <v-checkbox
+                                        label="remember me"
+                                        color="primary"
+                                        density="compact"
+                                        v-model="form.remember"
+                                    ></v-checkbox>
+                                </div>
+                                <Link
+                                    as="div"
+                                    v-if="canResetPassword"
+                                    :href="route('password.request')"
+                                >
+                                    <v-btn
+                                        size="small"
+                                        variant="text"
+                                        class="mt-1"
+                                        >Forgot your password?</v-btn
+                                    >
+                                </Link>
+                            </div>
                             <v-btn
+                                type="submit"
                                 :disabled="form.processing"
                                 :loading="form.processing"
                                 >Login</v-btn
                             >
                         </form>
+                        <div class="mt-6 text-center">
+                            <p>
+                                Belum punya akun?
+                                <Link
+                                    class="font-weight-medium"
+                                    :href="route('register')"
+                                    >Daftar</Link
+                                >
+                            </p>
+                        </div>
                     </v-card-text>
                 </v-card>
             </v-col>
