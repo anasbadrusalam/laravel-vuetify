@@ -15,6 +15,7 @@
                             <v-text-field
                                 v-model="form.email"
                                 label="Email"
+                                type="email"
                                 autofocus
                                 autocomplete="off"
                                 :error-messages="form.errors.email"
